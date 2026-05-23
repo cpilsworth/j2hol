@@ -29,7 +29,8 @@ function applyPageStyles(fragment) {
  * @returns {HTMLElement} The root element of the fragment
  */
 export async function loadFragment(path) {
-  const resp = await fetch(`${path}`);
+  let resp = await fetch(`${path}`);
+  if (!resp.ok) resp = await fetch(`${path}.plain.html`);
   if (!resp.ok) throw Error(`Couldn't fetch ${path}`);
 
   const html = await resp.text();
