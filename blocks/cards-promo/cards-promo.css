@@ -1,0 +1,97 @@
+/* Block: cards-promo
+   Horizontal row of promo cards with tall portrait images and text labels.
+   Extracted values from source: .promo-card-wrapper--alternate */
+
+.cards-promo > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.cards-promo > ul::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-promo > ul > li {
+  flex: 0 0 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--background-color);
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.cards-promo > ul > li .cards-promo-card-image {
+  line-height: 0;
+}
+
+.cards-promo > ul > li img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 10px;
+  display: block;
+}
+
+.cards-promo > ul > li .cards-promo-card-body {
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.cards-promo > ul > li .cards-promo-card-body strong {
+  display: block;
+  padding: 8px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-color);
+  line-height: 1.3;
+}
+
+/* Card link: visually hidden text but covers entire card for click target */
+.cards-promo > ul > li .cards-promo-card-body a,
+main .cards-promo a.button:any-link {
+  position: absolute;
+  inset: 0;
+  font-size: 0;
+  color: transparent;
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  display: block;
+  z-index: 1;
+}
+
+main .cards-promo .button-container {
+  display: contents;
+}
+
+@media (width >= 900px) {
+  .cards-promo > ul {
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .cards-promo > ul > li {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .cards-promo > ul > li .cards-promo-card-body strong {
+    font-size: 18px;
+    padding: 8px 0 12px;
+  }
+}

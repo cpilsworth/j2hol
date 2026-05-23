@@ -1,0 +1,23 @@
+:root {
+  --heading-font-family: "Open Sans", sans-serif;
+  --body-font-family: "Open Sans", sans-serif;
+  --display-font-family: "Oswald", sans-serif;
+  --background-color: #fff;
+  --text-color: #444;
+  --link-color: #2e71af;
+  --link-hover-color: #1a4d7a;
+  --light-color: #f2f2f2;
+  --dark-color: #203240;
+  --brand-color: #2e71af;
+  --brand-yellow: #ffc825;
+  --section-padding: 24px;
+  --content-max-width: 1400px;
+  --nav-height: 68px;
+  --heading-size-xxl: 32px;
+  --heading-size-xl: 24px;
+  --heading-size-l: 18px;
+  --heading-size-m: 20px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+  --border-radius: 8px;
+}

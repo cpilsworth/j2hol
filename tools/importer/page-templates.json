@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": ["https://www.jet2holidays.com/"],
+      "description": "Jet2holidays homepage with hero, search, deals, and promotional content",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [".hero-recent-searches-banner-wrapper"]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [".promo-cards-choose-favourite .promo-card-wrapper--alternate", ".promo-cards-other-ways .promo-card-wrapper--alternate", ".things-we-think-component ~ .content-scrollable .promo-card-wrapper--alternate"]
+        },
+        {
+          "name": "columns-media",
+          "instances": [".media-block.brand-background:not(.media-block--reverse):not(.brand--rfci)", ".media-block.brand-background.brand--rfci"]
+        },
+        {
+          "name": "carousel-feature",
+          "instances": [".why-book-with-us"]
+        },
+        {
+          "name": "columns-signup",
+          "instances": [".media-block.brand-background.media-block--reverse", ".email-signup"]
+        },
+        {
+          "name": "advanced-tabs",
+          "instances": [".information-card-component"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Banner",
+          "selector": ".hero-recent-searches-banner-wrapper",
+          "style": null,
+          "blocks": ["carousel-hero"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Holidays to Suit You",
+          "selector": ".promo-cards-choose-favourite",
+          "style": null,
+          "blocks": ["cards-promo"],
+          "defaultContent": [".promo-cards-choose-favourite .title-and-text__content h2", ".promo-cards-choose-favourite .title-and-text__content p"]
+        },
+        {
+          "id": "section-3",
+          "name": "Hotel in Mind",
+          "selector": ".media-block.brand-background:not(.media-block--reverse):not(.brand--rfci)",
+          "style": "branded",
+          "blocks": ["columns-media"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Why Book With Us",
+          "selector": ".why-book-with-us",
+          "style": null,
+          "blocks": ["carousel-feature"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "myJet2 Signup",
+          "selector": ".media-block-table",
+          "style": null,
+          "blocks": ["columns-media"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Our Destinations",
+          "selector": ".information-card-component",
+          "style": null,
+          "blocks": ["advanced-tabs"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Other Ways to Book",
+          "selector": ".promo-cards-other-ways",
+          "style": null,
+          "blocks": ["cards-promo"],
+          "defaultContent": [".promo-cards-other-ways h2"]
+        },
+        {
+          "id": "section-8",
+          "name": "Email Signup",
+          "selector": ".email-signup",
+          "style": "branded",
+          "blocks": ["columns-signup"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "Things We Think Youll Love",
+          "selector": ".things-we-think-component",
+          "style": null,
+          "blocks": ["columns-media", "cards-promo"],
+          "defaultContent": [".things-we-think-component h2"]
+        },
+        {
+          "id": "section-10",
+          "name": "SEO Content",
+          "selector": ".title-and-text.footer-links",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".title-and-text.footer-links h1", ".title-and-text.footer-links p"]
+        }
+      ]
+    }
+  ]
+}

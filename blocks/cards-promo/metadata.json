@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-23T11:37:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.jet2holidays.com/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "promotional",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + text label cards in scrollable row",
+    "buttonCount": 0,
+    "imageCount": 5
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional card grids",
+      "destination cards with images",
+      "category browsing cards",
+      "product/service feature cards"
+    ],
+    "notSuitableFor": [
+      "text-only card lists",
+      "detailed article cards with descriptions",
+      "cards requiring complex nested content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-23T11:37:00.000Z"
+  }
+}

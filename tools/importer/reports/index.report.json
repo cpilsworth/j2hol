@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "url": "https://www.jet2holidays.com/",
+  "path": "index",
+  "timestamp": "2026-05-23T12:12:09.646Z",
+  "title": "Package Holidays You Can Trust | Jet2holidays",
+  "template": "homepage",
+  "blocks": [
+    "carousel-hero",
+    "cards-promo",
+    "cards-promo",
+    "cards-promo",
+    "columns-media",
+    "columns-media",
+    "carousel-feature",
+    "columns-signup",
+    "columns-signup",
+    "advanced-tabs"
+  ]
+}

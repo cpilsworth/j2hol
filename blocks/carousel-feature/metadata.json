@@ -1,0 +1,39 @@
+{
+  "variantName": "carousel-feature",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-05-23T11:37:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.jet2holidays.com/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "feature-showcase",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "heading + paginated carousel of icon + title + subtitle items",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "USP/feature showcase sections",
+      "trust signal displays",
+      "paginated benefit lists with icons"
+    ],
+    "notSuitableFor": [
+      "image-heavy carousels",
+      "hero banners",
+      "product galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-23T11:37:00.000Z"
+  }
+}
