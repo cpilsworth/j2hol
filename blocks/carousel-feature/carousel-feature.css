@@ -28,14 +28,34 @@
   padding: 0;
 }
 
-/* Horizontal scrolling track - shows multiple items */
+/* Strict 3-col grid like the Jet2 "Why book with us" panel */
 .carousel-feature .carousel-feature-slides {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 32px 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 48px;
   overflow: visible;
   scroll-behavior: auto;
   scroll-snap-type: none;
+}
+
+@media (width < 900px) {
+  .carousel-feature .carousel-feature-slides {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Leading yellow bullet to compensate for missing source icons */
+.carousel-feature .carousel-feature-slide-image h3::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-yellow);
+  margin-right: 10px;
+  vertical-align: middle;
+  transform: translateY(-2px);
 }
 
 .carousel-feature .carousel-feature-slides::-webkit-scrollbar {

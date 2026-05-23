@@ -133,13 +133,32 @@ main a.button:hover {
 /* sections */
 .section {
   display: block;
-  padding: var(--section-padding) 0;
+  box-sizing: border-box;
+  padding: var(--section-padding) 20px;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
 }
 
 .section > .default-content-wrapper {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 20px;
+}
+
+/* Spacing between consecutive block wrappers inside a section */
+.section > * + * {
+  margin-top: var(--spacing-l);
+}
+
+/* Section headings: give breathing room before the block that follows */
+.section > .default-content-wrapper h2 {
+  margin: 0 0 var(--spacing-l);
+}
+
+/* Tighter intro paragraph under an h2 */
+.section > .default-content-wrapper h2 + p {
+  margin-top: calc(-1 * var(--spacing-m));
+  margin-bottom: var(--spacing-l);
+  color: var(--text-color);
 }
 
 .section.branded {
@@ -155,6 +174,81 @@ main a.button:hover {
 .section.branded a.button:any-link {
   background: var(--brand-yellow);
   color: var(--dark-color);
+}
+
+/* Full-bleed background sections: break out of the 1400px max-width centering */
+.section.light-gray,
+.section.brand-blue,
+.section.dark-blue {
+  max-width: none;
+  margin-inline: calc(50% - 50vw);
+  padding-inline: calc(50vw - 50% + 20px);
+}
+
+.section.light-gray {
+  background-color: #f5f5f5;
+}
+
+.section.brand-blue {
+  background-color: var(--brand-color);
+  color: #fff;
+}
+
+.section.brand-blue h2,
+.section.brand-blue h3 {
+  color: #fff;
+}
+
+.section.brand-blue a {
+  color: var(--brand-yellow);
+}
+
+.section.dark-blue {
+  background-color: #1a3a5c;
+  color: #fff;
+}
+
+.section.dark-blue h2,
+.section.dark-blue h3 {
+  color: #fff;
+}
+
+/* Signup banner: full-bleed beach photo + blue tint overlay + yellow heading */
+.section.signup {
+  max-width: none;
+  margin-inline: calc(50% - 50vw);
+  padding-inline: calc(50vw - 50% + 20px);
+  position: relative;
+  background-image: url('https://content.da.live/cpilsworth/j2hol/.index/email-signup-large-7af3a448.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  isolation: isolate;
+}
+
+.section.signup::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgb(46 113 175 / 75%) 0%, rgb(26 58 92 / 65%) 100%);
+  z-index: -1;
+}
+
+.section.signup h2,
+.section.signup h3 {
+  color: var(--brand-yellow);
+  text-transform: uppercase;
+  font-family: var(--display-font-family);
+}
+
+/* Hide the in-block redundant beach image since the section background already shows it */
+.section.signup .columns-signup > div:first-child {
+  display: none;
+}
+
+.section.signup .columns-signup {
+  background: transparent;
 }
 
 main > div,

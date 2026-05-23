@@ -95,3 +95,128 @@ main .cards-promo .button-container {
     padding: 8px 0 12px;
   }
 }
+
+/* Ways-to-book variant: 5 wide banner-style cards */
+.cards-promo.ways-to-book > ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  overflow: visible;
+}
+
+.cards-promo.ways-to-book > ul > li {
+  flex: none;
+  background: var(--background-color);
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
+  text-align: center;
+  padding-bottom: 14px;
+  cursor: pointer;
+}
+
+.cards-promo.ways-to-book > ul > li img {
+  aspect-ratio: 16 / 5;
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cards-promo.ways-to-book > ul > li .cards-promo-card-body {
+  padding: 10px 8px 0;
+}
+
+.cards-promo.ways-to-book > ul > li .cards-promo-card-body strong {
+  font-size: 14px;
+  color: var(--brand-color);
+  padding: 0;
+}
+
+@media (width < 900px) {
+  .cards-promo.ways-to-book > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Hotels variant: "Things we think you'll love" — 5 hotel cards with location */
+.cards-promo.hotels > ul > li {
+  flex: 1 1 0;
+  background: var(--background-color);
+  box-shadow: 0 1px 6px rgb(0 0 0 / 10%);
+  border-radius: 12px;
+}
+
+.cards-promo.hotels > ul > li img {
+  aspect-ratio: 4 / 3;
+  border-radius: 12px 12px 0 0;
+}
+
+.cards-promo.hotels > ul > li .cards-promo-card-body {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text-color);
+}
+
+.cards-promo.hotels > ul > li .cards-promo-card-body strong {
+  padding: 0 0 4px;
+  font-size: 16px;
+  color: var(--dark-color);
+}
+
+/* Destinations variant: small square thumbnails in horizontal scroll */
+.cards-promo.destinations > ul {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 4px 0 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.cards-promo.destinations > ul > li {
+  flex: 0 0 130px;
+  border-radius: 0;
+  background: transparent;
+  text-align: center;
+}
+
+.cards-promo.destinations > ul > li img {
+  width: 130px;
+  height: 130px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.cards-promo.destinations > ul > li .cards-promo-card-body {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.cards-promo.destinations > ul > li .cards-promo-card-body strong {
+  font-size: 14px;
+  padding: 0;
+  color: var(--dark-color);
+}
+
+@media (width >= 900px) {
+  .cards-promo.destinations > ul {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .cards-promo.destinations > ul > li {
+    flex: 0 0 140px;
+  }
+
+  .cards-promo.destinations > ul > li img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .cards-promo.destinations > ul > li .cards-promo-card-body strong {
+    font-size: 15px;
+    padding: 0;
+  }
+}
