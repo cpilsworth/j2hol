@@ -130,13 +130,17 @@ main a.button:hover {
   background-color: var(--link-hover-color);
 }
 
-/* sections */
-.section {
-  display: block;
+/* sections — override the section-metadata block's defaults at the project level.
+   `main .section` keeps specificity higher than block-supplied `.section` rules
+   so we win the cascade when section-metadata.css is appended later at runtime. */
+main .section {
+  --top-bottom-spacing: 40px;
+
+  display: block; /* overrides the `main > div { display: none }` placeholder below */
   box-sizing: border-box;
-  padding: var(--section-padding) 20px;
   max-width: var(--content-max-width);
   margin: 0 auto;
+  padding: var(--top-bottom-spacing) 20px;
 }
 
 .section > .default-content-wrapper {
@@ -177,16 +181,17 @@ main a.button:hover {
 }
 
 /* Full-bleed background sections: break out of the 1400px max-width centering */
-.section.light-gray,
-.section.brand-blue,
-.section.dark-blue {
+main .section.light-gray,
+main .section.brand-blue,
+main .section.dark-blue,
+main .section.signup {
   max-width: none;
   margin-inline: calc(50% - 50vw);
   padding-inline: calc(50vw - 50% + 20px);
 }
 
 .section.light-gray {
-  background-color: #f5f5f5;
+  background-color: var(--color-section-gray);
 }
 
 .section.brand-blue {
@@ -204,7 +209,7 @@ main a.button:hover {
 }
 
 .section.dark-blue {
-  background-color: #1a3a5c;
+  background-color: var(--color-dark-blue);
   color: #fff;
 }
 
@@ -213,26 +218,25 @@ main a.button:hover {
   color: #fff;
 }
 
-/* Signup banner: full-bleed beach photo + blue tint overlay + yellow heading */
+/* Signup banner: the photo comes from section-metadata `background:` (creates
+   picture.section-background); this rule only adds the blue tint + heading colour. */
 .section.signup {
-  max-width: none;
-  margin-inline: calc(50% - 50vw);
-  padding-inline: calc(50vw - 50% + 20px);
   position: relative;
-  background-image: url('https://content.da.live/cpilsworth/j2hol/.index/email-signup-large-7af3a448.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: #fff;
-  isolation: isolate;
 }
 
-.section.signup::before {
+.section.signup::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgb(46 113 175 / 75%) 0%, rgb(26 58 92 / 65%) 100%);
-  z-index: -1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.section.signup > *:not(picture) {
+  position: relative;
+  z-index: 2;
 }
 
 .section.signup h2,
@@ -240,15 +244,6 @@ main a.button:hover {
   color: var(--brand-yellow);
   text-transform: uppercase;
   font-family: var(--display-font-family);
-}
-
-/* Hide the in-block redundant beach image since the section background already shows it */
-.section.signup .columns-signup > div:first-child {
-  display: none;
-}
-
-.section.signup .columns-signup {
-  background: transparent;
 }
 
 main > div,
