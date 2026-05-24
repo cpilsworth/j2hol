@@ -116,7 +116,11 @@ function decorateMenu() {
 }
 
 function decorateMegaMenu(li) {
-  const menu = li.querySelector('.fragment-content');
+  // Two supported shapes:
+  //  - a referenced fragment (.fragment-content)
+  //  - an inline <ul> sibling of the top-level <p><a> (importer default)
+  const menu = li.querySelector(':scope > .fragment-content')
+    || li.querySelector(':scope > ul');
   if (!menu) return null;
   const wrapper = document.createElement('div');
   wrapper.className = 'mega-menu';
