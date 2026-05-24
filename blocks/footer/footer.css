@@ -96,6 +96,17 @@ footer {
       grid-auto-flow: column;
       column-gap: 40px;
       row-gap: 8px;
+
+      /* Each column's link list wraps into 2 sub-columns,
+         giving 6 visual columns total like the source design. */
+      ul {
+        column-count: 2;
+        column-gap: 24px;
+      }
+
+      li {
+        break-inside: avoid;
+      }
     }
 
     .section:nth-child(2) {
