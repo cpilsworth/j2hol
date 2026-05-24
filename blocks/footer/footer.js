@@ -1,7 +1,7 @@
 import { getConfig, getMetadata } from '../../scripts/ak.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-const FOOTER_PATH = '/fragments/nav/footer';
+const FOOTER_PATH = '/footer';
 
 /**
  * loads and decorates the footer
@@ -16,12 +16,8 @@ export default async function init(el) {
     fragment.classList.add('footer-content');
 
     const sections = [...fragment.querySelectorAll('.section')];
-
-    const copyright = sections.pop();
-    copyright.classList.add('section-copyright');
-
-    const legal = sections.pop();
-    legal.classList.add('section-legal');
+    sections.pop()?.classList.add('section-copyright');
+    sections.pop()?.classList.add('section-legal');
 
     el.append(fragment);
   } catch (e) {
